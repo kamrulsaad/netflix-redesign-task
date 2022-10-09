@@ -11,8 +11,6 @@ const Banner = () => {
     const movie = useSelector(state => state.movies.random)
     const baseUrl = useSelector(state => state.movies.img_url)
 
-    console.log(movie);
-
     useEffect(() => {
         dispatch(getMoviesData())
     }, [dispatch])
