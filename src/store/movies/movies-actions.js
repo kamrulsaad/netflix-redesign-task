@@ -13,11 +13,12 @@ export const getMoviesData = () => {
         try {
             const result = await fetchData()
 
-            console.log(result);
+            // console.log(result.data.results[Math.floor(Math.random() * 20)]);
 
-            if (result.status === "success") {
+            if (result?.data?.page) {
                 dispatch(moviesActions.replaceData({
-                    movies: result.data.followings.data,
+                    movies: result.data.results,
+                    random: result.data.results[Math.floor(Math.random() * 20)]
                 }))
             }
             dispatch(moviesActions.setLoading(false))
