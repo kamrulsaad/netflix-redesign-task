@@ -1,19 +1,17 @@
 import { moviesActions } from "./movie-slice"
 
-export const getMoviesData = () => {
+export const getMoviesData = (page = 1) => {
     return async (dispatch) => {
         const fetchData = async () => {
 
             dispatch(moviesActions.setLoading(true))
 
-            const res = await fetch("https://movie-task.vercel.app/api/popular?page=1")
+            const res = await fetch(`https://movie-task.vercel.app/api/popular?page=${page}`)
             const data = await res.json()
             return data
         }
         try {
             const result = await fetchData()
-
-            // console.log(result.data.results[Math.floor(Math.random() * 20)]);
 
             if (result?.data?.page) {
                 dispatch(moviesActions.replaceData({

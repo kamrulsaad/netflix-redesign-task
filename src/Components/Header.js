@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { HiSearch, HiBell } from "react-icons/hi";
+import {NavLink} from 'react-router-dom'
 
 const Header = () => {
 
@@ -35,10 +36,10 @@ const Header = () => {
 
                 <ul className="hidden space-x-4 md:flex">
                     <li className="headerLink cursor-default font-semibold text-white hover:text-white">
-                        Home
+                        <NavLink to='/'>Home</NavLink>
                     </li>
                     <li className="headerLink">TV Shows</li>
-                    <li className="headerLink">Movies</li>
+                    <li className="headerLink"><NavLink to='/movies'>Movies</NavLink></li>
                     <li className="headerLink">New & Popular</li>
                     <li className="headerLink">My List</li>
                 </ul>
