@@ -14,7 +14,7 @@ const AllMovies = () => {
         <div className='mt-20 mx-10'>
             <DropDown></DropDown>
             {
-                loading ? <Loading></Loading> : <div className='grid grid-cols-3 lg:grid-cols-5 gap-4'>
+                loading ? <Loading></Loading> : <div data-aos="fade-in" data-aos-delay="1000" className='grid md:grid-cols-3 lg:grid-cols-5 gap-4'>
                     {
                         movies.map(m => <Thumbnail key={m.id} movie={m}></Thumbnail>)
                     }

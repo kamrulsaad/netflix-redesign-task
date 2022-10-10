@@ -1,12 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Thumbnail = ({ movie }) => {
+const Thumbnail = ({ movie, index }) => {
 
     const navigate = useNavigate()
 
     return (
-        <div onClick={() => navigate(`/movie/${movie.id}`)}
+        <div data-aos="fade-in" data-aos-delay={index* 150} onClick={() => navigate(`/movie/${movie.id}`)}
             className={`relative h-28 min-w-[180px] cursor-pointer transition duration-200 ease-out md:h-36 md:min-w-[260px] md:hover:scale-105`}>
             <img
                 src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path || movie.poster_path}`}

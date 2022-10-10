@@ -46,13 +46,16 @@ I would like to implement the search functionality using `redux` architecture an
 - `tailwind-scrollbar`
 - `tailwind-scrollbar-hide`
 - `tailwindcss-textshadow`
+- `animate-on-scroll-(AOS)`
+
+
 ------
 
 ## Features
 
 Users should be able to:
 
-- See a Beautiful and responsive  home page
+- See a Beautiful, animated and responsive home page
 - See dynaminc data for the movies
 - CLicking on the movies at the top navbar will take user the 'all movies' page. 
 - In the 'all movies' page, pagination and filtering by year feature can be experienced

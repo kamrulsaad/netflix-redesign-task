@@ -3,6 +3,10 @@ import Home from "./Components/Home";
 import {Routes, Route} from 'react-router-dom'
 import AllMovies from "./Components/AllMovies";
 import MovieDetails from "./Components/MovieDetails";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+
+AOS.init();
 
 function App() {
   return (

@@ -8,7 +8,7 @@ const Movies = () => {
     ]
 
     return (
-        <section className="md:space-y-24">
+        <section data-aos="fade-in" data-aos-delay='100' className="md:space-y-24">
             {
                 data.map((d, index) => <Row key={index} title={d} page={index+1}></Row>)
             }

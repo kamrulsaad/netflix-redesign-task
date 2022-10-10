@@ -17,7 +17,7 @@ const Pagination = () => {
     }
 
     return (
-        <div className="flex justify-center mt-12">
+        <div data-aos="fade-in" data-aos-delay="1200" className="flex justify-center mt-12">
             <nav aria-label="Page navigation example">
                 <ul className="flex flex-wrap list-style-none">
                     {rows.map(function (i) {
