@@ -32,8 +32,6 @@ const Header = () => {
                     className="cursor-pointer object-contain" alt=''
                 />
 
-                {/* <BasicMenu /> */}
-
                 <ul className="hidden space-x-4 md:flex">
                     <li className="headerLink cursor-default font-semibold text-white hover:text-white">
                         <NavLink to='/'>Home</NavLink>

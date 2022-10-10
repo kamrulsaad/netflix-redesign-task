@@ -13,7 +13,7 @@ export default function DropDown() {
     const movies = useSelector(state => state.movies.movies)
 
     const filterByYear = (year) => {
-        const moviesByYear = movies.filter(movie => parseInt(movie.release_date.slice(0,4)) === year )
+        const moviesByYear = movies.filter(movie => parseInt(movie.release_date.slice(0, 4)) === year)
         dispatch(moviesActions.replaceData({
             movies: moviesByYear
         }))

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getMoviesData } from '../store/movies/movies-actions';
 import { FaPlay } from 'react-icons/fa'
 import { HiInformationCircle } from "react-icons/hi";
+import Loading from './Loading';
 
 const Banner = () => {
 
@@ -10,10 +11,13 @@ const Banner = () => {
 
     const movie = useSelector(state => state.movies.random)
     const baseUrl = useSelector(state => state.movies.img_url)
+    const loading = useSelector(state => state.movies.loading)
 
     useEffect(() => {
         dispatch(getMoviesData())
     }, [dispatch])
+
+    if(loading) return <Loading></Loading>
 
     return (
         <div className="flex flex-col space-y-2 py-16 md:space-y-4 lg:h-[65vh] lg:justify-end lg:pb-12">

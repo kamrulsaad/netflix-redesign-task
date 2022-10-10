@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import Thumbnail from './Thumbnail';
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { useQuery } from '@tanstack/react-query';
+import Loading from './Loading';
 
 const Row = ({ title, page }) => {
 
@@ -21,11 +22,13 @@ const Row = ({ title, page }) => {
         }
     }
 
-    const { data: movies } = useQuery(['movies', page], () =>
+    const { data: movies, isLoading } = useQuery(['movies', page], () =>
         fetch(`https://movie-task.vercel.app/api/popular?page=${page}`).then(res =>
             res.json()
         )
     )
+
+    if(isLoading) return <Loading></Loading>
 
     return (
         <div className="h-40 space-y-0.5 md:space-y-2">
